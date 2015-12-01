@@ -38,7 +38,6 @@ public class Song
 	}
 	public ArrayList<String> chooseKeySignature()
 	{
-		ArrayList<String> keySignature = new ArrayList<String>();
 		ArrayList<String> cMajor = new ArrayList<String>(); 
 		cMajor.add("ERROR"); cMajor.add("C"); cMajor.add("D"); cMajor.add("E"); cMajor.add("F"); cMajor.add("G"); cMajor.add("A"); cMajor.add("B"); 
 		ArrayList<String> gMajor = new ArrayList<String>();
