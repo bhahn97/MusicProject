@@ -48,11 +48,11 @@ public class Song
 	}
 	public int chooseBeatsPerMeasure() //returns 2,3, or 4
 	{
-
+		return 2;
 	}
 	public int chooseNumberOfMeasures() //returns int as number of measures; probably a multiple of 4
 	{
-		
+		return 16;
 	}
 	public void fillKeysArray() //made void from ArrayList<String>
 	{
@@ -101,14 +101,16 @@ public class Song
 		
 		return tempChordProgression;
 	}
-	public ArrayList<ArrayList<String>> generateBassVoice()
+	
+	public ArrayList<String> findBassRange()
 	{
-		ArrayList<String> bassNoteRange = new ArrayList<String>(); //Range of F2 to C4
-		int lowNoteIndex; int highNoteIndex;
+		ArrayList<String> bassNoteRange = new ArrayList<String>(13); //Range of E2 to C4
+		bassNoteRange.add("ERROR");
+		int lowNoteIndex = 0; int highNoteIndex = 0;
 		for(int i = 1; i < currentKey.size(); i++) //finds index of F (lowest bass) and C highest bass
 		{
 			String currentNote = currentKey.get(i);
-			if(currentNote.contains("F"))
+			if(currentNote.contains("E"))
 			{
 				lowNoteIndex = i;
 			}
@@ -117,33 +119,62 @@ public class Song
 				highNoteIndex = i;
 			}
 		}
+		int currentKeyIndex = lowNoteIndex;
+		while(!currentKey.get(currentKeyIndex).contains("C")) //adds E2 --> B2
+		{
+			bassNoteRange.add(currentKey.get(currentKeyIndex) + "2");
+			if(currentKeyIndex < 8)
+			{
+				currentKeyIndex++;
+			}
+			else
+			{
+				currentKeyIndex = 1; 
+			}
+		}
+		bassNoteRange.add(currentKeyIndex + "3"); //adds C3 or C#3
+		while(!currentKey.get(currentKeyIndex).contains("C"))
+		{
+			bassNoteRange.add(currentKey.get(currentKeyIndex) + "3");
+			if(currentKeyIndex < 8)
+			{
+				currentKeyIndex++;
+			}
+		}
+		return bassNoteRange;
+	}
+	//public ArrayList<ArrayList<String>> generateBassVoice()
+	{
+
+		
+		
 		
 	}
-	public void optimizeBass()
+	//public void optimizeBass()
 	{
 		
 	}
-	public ArrayList<ArrayList<String>> generateSopranoVoice()
+	//public ArrayList<ArrayList<String>> generateSopranoVoice()
 	{
 		
 	}
-	public void optimizeSoprano()
+	//public void optimizeSoprano()
 	{
 		
 	}
-	public ArrayList<ArrayList<String>> generateAltoVoice()
+	//public ArrayList<ArrayList<String>> generateAltoVoice()
 	{
 		
 	}
-	public void optimizeAlto()
+	//public void optimizeAlto()
 	{
 		
 	}
-	public ArrayList<ArrayList<String>> generateTenorVoice()
+	//public ArrayList<ArrayList<String>> generateTenorVoice()
 	{
 		
 	}
-	public void optimizeTenor()
+	//public void optimizeTenor()
 	{
 		
 	}

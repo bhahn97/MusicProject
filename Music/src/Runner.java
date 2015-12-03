@@ -5,8 +5,8 @@ public class Runner
 {
   public static void main(String[] args)
   {
-	  Player player = new Player();
+	  Player player2 = new Player();
 	  System.out.println("Type R for Random or ");
-	  player.play("F2w");
+	  player2.play("");
   }
 }
