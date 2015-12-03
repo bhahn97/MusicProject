@@ -7,6 +7,6 @@ public class Runner
   {
 	  Player player = new Player();
 	  System.out.println("Type R for Random or ");
-	  player.play("C#4q");
+	  player.play("F2w");
   }
 }

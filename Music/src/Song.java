@@ -103,6 +103,20 @@ public class Song
 	}
 	public ArrayList<ArrayList<String>> generateBassVoice()
 	{
+		ArrayList<String> bassNoteRange = new ArrayList<String>(); //Range of F2 to C4
+		int lowNoteIndex; int highNoteIndex;
+		for(int i = 1; i < currentKey.size(); i++) //finds index of F (lowest bass) and C highest bass
+		{
+			String currentNote = currentKey.get(i);
+			if(currentNote.contains("F"))
+			{
+				lowNoteIndex = i;
+			}
+			else if(currentNote.contains("C"))
+			{
+				highNoteIndex = i;
+			}
+		}
 		
 	}
 	public void optimizeBass()
